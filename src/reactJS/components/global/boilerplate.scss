@@ -1,0 +1,16 @@
+@use "../Functions/Functions" as f;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.sideDiv {
+  background-image: url("./photo.jpeg");
+  background-repeat: no-repeat;
+  width: f.rem(400);
+  height: f.rem(1000);
+}
+.sideDiv > img {
+  width: f.rem(100);
+}

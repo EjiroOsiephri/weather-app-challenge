@@ -3,6 +3,7 @@ import Main from "./reactJS/components/Main";
 
 function App() {
   const [weatherData, setWeatherData] = useState();
+
   useEffect(() => {
     async function runDev() {
       const res = await fetch(
@@ -15,10 +16,10 @@ function App() {
     runDev();
   }, []);
 
-  console.log(weatherData.current.condition.icon);
+  console.log(weatherData?.current?.condition?.icon);
   return (
     <div>
-      <Main image={weatherData.current.condition.icon} />
+      <Main image={weatherData?.current?.condition?.icon} />
     </div>
   );
 }
