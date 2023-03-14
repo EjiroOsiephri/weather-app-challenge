@@ -1,5 +1,5 @@
 @use "../Functions/Functions" as f;
-
+@use "../Functions/breakpoints.scss" as u;
 * {
   padding: 0;
   margin: 0;
@@ -8,9 +8,91 @@
 .sideDiv {
   background-image: url("./photo.jpeg");
   background-repeat: no-repeat;
-  width: f.rem(400);
-  height: f.rem(1000);
+  width: f.rem(459);
+  height: f.rem(1023);
+  @include u.breakpoints(small) {
+    width: f.rem(330);
+    height: f.rem(1023);
+  }
 }
 .sideDiv > img {
-  width: f.rem(100);
+  width: f.rem(202);
+  height: f.rem(234);
+  transform: translate(f.rem(-60), f.rem(80));
+}
+.searchBtn {
+  width: f.rem(161);
+  height: f.rem(40);
+  transform: translate(f.rem(12), f.rem(-160));
+  background: #6e707a;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: none;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e7e7eb;
+}
+.form > input {
+  box-sizing: border-box;
+  transform: translate(f.rem(10), f.rem(-200));
+  width: 268px;
+  height: 48px;
+  border: 1px solid #e7e7eb;
+  background-color: rgba(30, 33, 58, 1);
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #616475;
+  padding-left: f.rem(20);
+  @include u.breakpoints(medium) {
+    width: 202px;
+  }
+}
+.form > button {
+  width: 86px;
+  height: 48px;
+  transform: translate(f.rem(15), f.rem(-200));
+  background: #3c47e9;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e7e7eb;
+  border: none;
+}
+.times {
+  position: absolute;
+  font-size: 30px;
+  transform: translateY(f.rem(-240));
+  color: #e7e7eb;
+}
+.tempDegree {
+  font-family: "Raleway";
+  font-style: normal;
+  // transform: translate(f.rem(100), f.rem(80));
+  margin-top: 50px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 120px;
+  line-height: 169px;
+  color: #e7e7eb;
+}
+.tempDegree > span {
+  font-size: 40px;
+  color: rgba(160, 159, 177, 1);
+}
+.conditionText {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #a09fb1;
+  margin-top: -10px;
 }

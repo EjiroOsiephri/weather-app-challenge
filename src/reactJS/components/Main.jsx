@@ -26,20 +26,35 @@ function Main(props) {
   return (
     <div className="allDivs">
       <div className="sideDiv">
-        <button onClick={displayInput}>Search for places</button>
+        <button className="searchBtn" onClick={displayInput}>
+          Search for places
+        </button>
         {show ? <img src={props.image} alt="" /> : <img src={Sunny} alt="" />}
 
         <div className="form">
           {show && (
-            <input ref={myRef} onChange={handleInputChange} type="text" />
+            <input
+              placeholder="Search Location"
+              ref={myRef}
+              onChange={handleInputChange}
+              type="text"
+            />
           )}
           {show && <button onClick={props.onSearch}>Search</button>}
-          {show && <FaTimes onClick={changeIcon} />}
+          {show && <FaTimes className="times" onClick={changeIcon} />}
         </div>
-        <h1>
-          {props.temp}
-          <span>C</span>
-        </h1>
+        {show ? (
+          <h1 className="tempText">{props.temp}</h1>
+        ) : (
+          <h2 className="tempDegree">
+            30<span>°C</span>
+          </h2>
+        )}
+        {show ? (
+          <h1>{props.conditionText}</h1>
+        ) : (
+          <h2 className="conditionText">Rainy Day</h2>
+        )}
       </div>
     </div>
   );
