@@ -21,7 +21,14 @@ function App() {
     const data = await res.json();
 
     setWeatherData(data);
+    console.log(data);
   }
+
+  const weatherValueObject = {
+    temp: `${weatherData?.current?.temp_c}`,
+    conditionText: `${weatherData?.current?.condition?.text}`,
+  };
+  console.log(weatherValueObject.temp);
 
   console.log(weatherData?.current?.condition?.icon);
 
@@ -31,6 +38,8 @@ function App() {
         onInputChange={handleInputChange}
         image={weatherData?.current?.condition?.icon}
         onSearch={fetchWeatherData}
+        temp={weatherValueObject.temp}
+        conditionText={weatherValueObject.conditionText}
       />
     </div>
   );
