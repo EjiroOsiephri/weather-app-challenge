@@ -10,7 +10,7 @@ body {
   overflow: hidden;
   font-family: "Raleway";
   @include u.breakpoints(medium) {
-    overflow: scroll;
+    overflow-y: scroll;
   }
 }
 // .allDivs {
@@ -21,9 +21,8 @@ body {
   background-repeat: no-repeat;
   width: f.rem(459);
   height: f.rem(1023);
-  @include u.breakpoints(small) {
-    width: f.rem(330);
-    height: f.rem(1023);
+  @media screen and (max-width: f.rem(375)) {
+    width: 350px;
   }
 }
 .image > img {
@@ -33,7 +32,7 @@ body {
   margin-bottom: 30px;
 
   @include u.breakpoints(medium) {
-    transform: translate(f.rem(50), f.rem(40));
+    transform: translate(f.rem(20), f.rem(40));
     width: f.rem(160);
   }
 }
@@ -91,11 +90,9 @@ body {
   left: f.rem(420);
   transform: translateY(f.rem(-100));
   color: #e7e7eb;
-  @include u.breakpoints(small) {
-    transform: translateY(f.rem(-100));
-    position: absolute;
-    left: f.rem(-110);
-    margin-bottom: f.rem(4);
+  @media screen and (max-width: f.rem(375)) {
+    margin-top: f.rem(-95);
+    transform: translateX(f.rem(-150));
   }
 }
 .tempDegree {
@@ -140,10 +137,14 @@ h3 {
   line-height: 21px;
   color: #88869d;
   transform: translate(35%, 150%);
-  @include u.breakpoints(small) {
-    transform: translate(-115%, 150%);
+  @media screen and (max-width: f.rem(375)) {
+    margin-top: f.rem(35);
+    transform: translateX(f.rem(50));
   }
 }
 .finalLocation h3 {
   margin-top: f.rem(20);
+}
+.forms {
+  margin-top: -300px;
 }

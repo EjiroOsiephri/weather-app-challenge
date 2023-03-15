@@ -78,6 +78,12 @@ function App() {
     region: weatherData.location.region,
     id: weatherData.location.tz_id,
     country: weatherData.location.country,
+    MPH: weatherData.current.wind_kph,
+    wind_dir: weatherData.current.wind_dir,
+    capital: weatherData.location.name,
+    humidity: weatherData.current.humidity,
+    visibility: weatherData.current.vis_miles,
+    pressure: weatherData.current.pressure_mb,
   };
 
   const {
@@ -105,14 +111,22 @@ function App() {
         localtime={weatherValueObject.localtime}
         location={weatherValueObject.location}
       />
-      <Form
-        lat={weatherValueObject.lat}
-        lon={weatherValueObject.lon}
-        region={weatherValueObject.region}
-        id={weatherValueObject.id}
-        country={weatherValueObject.country}
-        image={weatherData.current.condition.icon}
-      />
+      <div className="forms">
+        <Form
+          lat={weatherValueObject.lat}
+          lon={weatherValueObject.lon}
+          region={weatherValueObject.region}
+          id={weatherValueObject.id}
+          country={weatherValueObject.country}
+          image={weatherData.current.condition.icon}
+          MPH={weatherValueObject.MPH}
+          windDir={weatherValueObject.wind_dir}
+          capital={weatherValueObject.capital}
+          humidity={weatherValueObject.humidity}
+          visibility={weatherValueObject.visibility}
+          pressure={weatherValueObject.pressure}
+        />
+      </div>
     </div>
   );
 }
