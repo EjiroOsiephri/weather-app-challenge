@@ -13,15 +13,6 @@ function Main(props) {
   }
   const myRef = useRef(null);
 
-  useEffect(() => {
-    // Set the background color to black when show is true
-    if (show) {
-      document.body.style.backgroundColor = "black";
-    } else {
-      document.body.style.backgroundColor = "white"; // Reset to default color
-    }
-  }, [show]);
-
   function handleInputChange(e) {
     props.onInputChange(e.target.value);
   }
@@ -45,7 +36,13 @@ function Main(props) {
         <button className="searchBtn" onClick={displayInput}>
           Search for places
         </button>
-        {show ? <img src={props.image} /> : <img src={props.image} />}
+        <div className="image">
+          {show ? (
+            <img src={props.image} style={{ display: "none" }} /> // Set display to none if show is true
+          ) : (
+            <img src={props.image} style={{ display: "block" }} /> // Set display to block if show is false
+          )}
+        </div>
 
         <div className="form">
           {show && (
@@ -59,30 +56,32 @@ function Main(props) {
           {show && <button onClick={props.onSearch}>Search</button>}
           {show && <FaTimes className="times" onClick={changeIcon} />}
         </div>
-        {show ? (
-          <h1 className="tempText">{props.temp}</h1>
-        ) : (
-          <h2 className="tempDegree">
-            {props.temp}
-            <span>°C</span>
-          </h2>
-        )}
-        {show ? (
-          <h1>{props.conditionText}</h1>
-        ) : (
-          <h2 className="conditionText">{props.conditionText}</h2>
-        )}
-        <div className="finalLocation">
-          <h2>
-            Today: {day} {month}
-          </h2>
-          <h2>
-            <span>
-              {" "}
-              <FaMapMarkerAlt />
-            </span>{" "}
-            {props.location}
-          </h2>
+        <div style={{ display: show ? "none" : "block" }}>
+          {show ? (
+            <h1 className="tempText">{props.temp}</h1>
+          ) : (
+            <h2 className="tempDegree">
+              {props.temp}
+              <span>°C</span>
+            </h2>
+          )}
+          {show ? (
+            <h1>{props.conditionText}</h1>
+          ) : (
+            <h2 className="conditionText">{props.conditionText}</h2>
+          )}
+          <div className="finalLocation">
+            <h2>
+              Today . {day}, {month}
+            </h2>
+            <h3>
+              <span>
+                {" "}
+                <FaMapMarkerAlt />
+              </span>{" "}
+              {props.location}
+            </h3>
+          </div>
         </div>
       </div>
     </div>

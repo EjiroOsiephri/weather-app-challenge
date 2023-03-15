@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Main from "./reactJS/components/Main";
+import logo from "./reactJS/components/images/LightCloud.png";
+import Form from "./reactJS/Form";
+import "./reactJS/components/util/grid.scss";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -7,7 +10,7 @@ function App() {
       cloud: 25,
       condition: {
         code: 1003,
-        icon: "//cdn.weatherapi.com/weather/64x64/night/116.png",
+        icon: logo,
         text: "Partly Cloud",
       },
       feelslike_c: 31.7,
@@ -70,10 +73,29 @@ function App() {
     conditionText: `${weatherData.current.condition.text}`,
     localtime: `${weatherData.location.localtime}`,
     location: `${weatherData.location.name}`,
+    lat: weatherData.location.lat,
+    lon: weatherData.location.lon,
+    region: weatherData.location.region,
+    id: weatherData.location.tz_id,
+    country: weatherData.location.country,
   };
 
+  const {
+    onInputChange,
+    image,
+    onSearch,
+    temp,
+    conditionText,
+    localtime,
+    location,
+    lat,
+    lon,
+    region,
+    id,
+  } = weatherData.current;
+
   return (
-    <div>
+    <div className="container">
       <Main
         onInputChange={handleInputChange}
         image={weatherData.current.condition.icon}
@@ -82,6 +104,14 @@ function App() {
         conditionText={weatherValueObject.conditionText}
         localtime={weatherValueObject.localtime}
         location={weatherValueObject.location}
+      />
+      <Form
+        lat={weatherValueObject.lat}
+        lon={weatherValueObject.lon}
+        region={weatherValueObject.region}
+        id={weatherValueObject.id}
+        country={weatherValueObject.country}
+        image={weatherData.current.condition.icon}
       />
     </div>
   );
