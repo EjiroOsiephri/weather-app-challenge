@@ -41,6 +41,9 @@ function App() {
       region: "Federal Capital Territory",
       tz_id: "Africa/Lagos",
     },
+    error: {
+      message: "Invalid input entered",
+    },
   }); // setting state for the weather Api
 
   const [valueData, setValueData] = useState();
@@ -60,20 +63,14 @@ function App() {
     const data = await res.json();
 
     setWeatherData(data);
-    console.log(data.error.message);
   }
-
-  console.log(weatherData.location.localtime);
 
   const weatherValueObject = {
     temp: `${weatherData.current.temp_c}`,
     conditionText: `${weatherData.current.condition.text}`,
     localtime: `${weatherData.location.localtime}`,
+    location: `${weatherData.location.name}`,
   };
-  console.log(weatherValueObject.temp);
-  console.log(weatherData);
-
-  console.log(weatherData.current.condition.icon);
 
   return (
     <div>
@@ -83,6 +80,8 @@ function App() {
         onSearch={fetchWeatherData}
         temp={weatherValueObject.temp}
         conditionText={weatherValueObject.conditionText}
+        localtime={weatherValueObject.localtime}
+        location={weatherValueObject.location}
       />
     </div>
   );

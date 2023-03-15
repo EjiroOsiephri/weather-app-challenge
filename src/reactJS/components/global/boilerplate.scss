@@ -18,12 +18,16 @@
 .sideDiv > img {
   width: f.rem(202);
   height: f.rem(234);
-  transform: translate(f.rem(-60), f.rem(80));
+  transform: translate(f.rem(-60), f.rem(100));
+  @include u.breakpoints(medium) {
+    transform: translate(f.rem(-130), f.rem(100));
+    width: f.rem(160);
+  }
 }
 .searchBtn {
   width: f.rem(161);
   height: f.rem(40);
-  transform: translate(f.rem(12), f.rem(-160));
+  transform: translate(f.rem(12), f.rem(-180));
   background: #6e707a;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border: none;
@@ -36,7 +40,7 @@
 }
 .form > input {
   box-sizing: border-box;
-  transform: translate(f.rem(10), f.rem(-200));
+  transform: translate(f.rem(10), f.rem(-220));
   width: 268px;
   height: 48px;
   border: 1px solid #e7e7eb;
@@ -55,7 +59,7 @@
 .form > button {
   width: 86px;
   height: 48px;
-  transform: translate(f.rem(15), f.rem(-200));
+  transform: translate(f.rem(15), f.rem(-220));
   background: #3c47e9;
   font-family: "Raleway";
   font-style: normal;
@@ -68,7 +72,7 @@
 .times {
   position: absolute;
   font-size: 30px;
-  transform: translateY(f.rem(-240));
+  transform: translateY(f.rem(-250));
   color: #e7e7eb;
 }
 .tempDegree {
@@ -81,6 +85,10 @@
   font-size: 120px;
   line-height: 169px;
   color: #e7e7eb;
+  @include u.breakpoints(medium) {
+    transform: translate(f.rem(-80), f.rem(-40));
+    font-size: 60px;
+  }
 }
 .tempDegree > span {
   font-size: 40px;
@@ -90,9 +98,13 @@
   font-family: "Raleway";
   font-style: normal;
   font-weight: 600;
-  font-size: 36px;
+  font-size: 30px;
   line-height: 42px;
   text-align: center;
   color: #a09fb1;
-  margin-top: -10px;
+  margin-top: -30px;
+  @include u.breakpoints(medium) {
+    transform: translateX(f.rem(-55));
+    margin-top: f.rem(-90);
+  }
 }
