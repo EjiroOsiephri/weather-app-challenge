@@ -61,7 +61,7 @@ function App() {
     }
 
     const res = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=96651987aee74f2dade74345231303&q=${valueData}&aqi=no`
+      `https://api.weatherapi.com/v1/current.json?key=d1f9dffe5bcb4a5e89f200842231503&q=${valueData}&aqi=no`
     );
     const data = await res.json();
 
@@ -125,6 +125,7 @@ function App() {
           humidity={weatherValueObject.humidity}
           visibility={weatherValueObject.visibility}
           pressure={weatherValueObject.pressure}
+          temp={weatherValueObject.temp}
         />
       </div>
     </div>

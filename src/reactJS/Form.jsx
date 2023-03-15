@@ -2,11 +2,27 @@ import "../reactJS/components/util/grid.scss";
 import React, { useState } from "react";
 
 function Form(props) {
+  const [style, setStyle] = React.useState({});
+
+  setTimeout(() => {
+    const newStyle = {
+      opacity: 1,
+      width: `${props.humidity}%`,
+    };
+
+    setStyle(newStyle);
+  }, 200);
+
+  const [truthy, setTruthy] = useState();
+
+  function celsius() {}
+  function fahrenheit() {}
+
   return (
     <div className="secondDiv">
       <div className="flexContainer">
-        <button>F</button>
-        <button>C</button>
+        <button onClick={celsius}>F</button>
+        <button onClick={fahrenheit}>C</button>
       </div>
       <div className="flexBox">
         <div className="flexItem">
@@ -29,6 +45,7 @@ function Form(props) {
         <div className="flexItem">
           <h1>{props.country}</h1>
           <img src={props.image} alt="" />
+          <h1>{props.temp}°C</h1>
           <h1>{props.capital}</h1>
         </div>
       </div>
@@ -44,6 +61,11 @@ function Form(props) {
         <div className="gridItem">
           <h5>Humidity</h5>
           <h1>{props.humidity}%</h1>
+          <div className="progress">
+            <div className="progress-done" style={style}>
+              {props.humidity}%
+            </div>
+          </div>
         </div>
         <div className="gridItem">
           <h5>Visibility</h5>
