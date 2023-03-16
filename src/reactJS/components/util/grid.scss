@@ -11,6 +11,7 @@ button {
   border: none;
 }
 .flexContainer {
+  margin-top: 30px;
   transform: translateY(f.rem(300));
   display: flex;
   justify-content: end;
@@ -29,7 +30,7 @@ button {
   display: flex;
   gap: f.rem(30);
   margin-top: f.rem(320);
-  transform: translateX(f.rem(80));
+
   @media screen and (max-width: f.rem(300)) {
     display: flex;
     margin-top: f.rem(520);
@@ -40,6 +41,9 @@ button {
     margin-top: f.rem(370);
     flex-wrap: wrap;
     transform: translateX(f.rem(30));
+  }
+  @media screen and (min-width: f.rem(901)) {
+    transform: translateX(f.rem(80));
   }
 }
 .flexItem {
