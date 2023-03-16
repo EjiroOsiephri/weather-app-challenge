@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import "../components/global/boilerplate.scss";
 import Sunny from "./images/LightCloud.png";
 import { FaTimes, FaMapMarkerAlt } from "react-icons/fa";
+import backGround from "../components/global/Cloud-background.png";
 
 function Main(props) {
   const [show, setShow] = useState(false);
@@ -30,6 +31,9 @@ function Main(props) {
   const hour = dateTime.getHours();
   const minute = dateTime.getMinutes();
 
+  {
+    props.error && alert("ejiro");
+  }
   return (
     <div className="allDivs">
       <div className="sideDiv">

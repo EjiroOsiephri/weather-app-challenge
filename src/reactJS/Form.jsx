@@ -13,16 +13,20 @@ function Form(props) {
     setStyle(newStyle);
   }, 200);
 
-  const [truthy, setTruthy] = useState();
+  const [truthy, setTruthy] = useState(props.temp);
 
-  function celsius() {}
-  function fahrenheit() {}
+  function celsius() {
+    setTruthy(props.temp);
+  }
+  function fahrenheit() {
+    setTruthy(props.temp_f);
+  }
 
   return (
     <div className="secondDiv">
       <div className="flexContainer">
-        <button onClick={celsius}>F</button>
-        <button onClick={fahrenheit}>C</button>
+        <button onClick={celsius}>°C</button>
+        <button onClick={fahrenheit}>°F</button>
       </div>
       <div className="flexBox">
         <div className="flexItem">
@@ -45,7 +49,10 @@ function Form(props) {
         <div className="flexItem">
           <h1>{props.country}</h1>
           <img src={props.image} alt="" />
-          <h1>{props.temp}°C</h1>
+          <h1>
+            {truthy}
+            {truthy === props.temp ? "°C" : "°F"}
+          </h1>
           <h1>{props.capital}</h1>
         </div>
       </div>

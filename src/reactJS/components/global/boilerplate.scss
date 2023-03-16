@@ -12,12 +12,20 @@ body {
   @include u.breakpoints(medium) {
     overflow-y: scroll;
   }
+  @media screen and (max-width: f.rem(900)) {
+    overflow-y: scroll;
+  }
+}
+.image {
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(-55));
+  }
 }
 // .allDivs {
 //   background-color: rgba(30, 33, 58, 1);
 // }
 .sideDiv {
-  background-image: url("./photo.jpeg");
+  background-color: #1e213a;
   background-repeat: no-repeat;
   width: f.rem(459);
   height: f.rem(1023);
@@ -32,7 +40,7 @@ body {
   margin-bottom: 30px;
 
   @include u.breakpoints(medium) {
-    transform: translate(f.rem(20), f.rem(40));
+    transform: translate(f.rem(60), f.rem(40));
     width: f.rem(160);
   }
 }
@@ -110,7 +118,8 @@ body {
     font-size: 60px;
   }
 }
-.tempDegree > span {
+.tempDegree > span,
+h2 {
   font-size: 40px;
   color: rgba(160, 159, 177, 1);
 }
@@ -123,8 +132,11 @@ body {
   text-align: center;
   color: #a09fb1;
   margin-top: -30px;
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(-26));
+  }
   @include u.breakpoints(medium) {
-    transform: translateX(f.rem(-55));
+    transform: translateX(f.rem(-56));
     margin-top: f.rem(-90);
   }
 }
@@ -140,6 +152,15 @@ h3 {
   @media screen and (max-width: f.rem(375)) {
     margin-top: f.rem(35);
     transform: translateX(f.rem(50));
+  }
+  @media screen and (max-width: f.rem(700)) {
+    margin-top: f.rem(35);
+    transform: translateX(f.rem(100));
+  }
+}
+.finalLocation {
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(-50));
   }
 }
 .finalLocation h3 {

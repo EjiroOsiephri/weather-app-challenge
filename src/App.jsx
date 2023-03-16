@@ -44,9 +44,9 @@ function App() {
       region: "Federal Capital Territory",
       tz_id: "Africa/Lagos",
     },
-    error: {
-      message: "Invalid input entered",
-    },
+    // error: {
+    //   message: "Invalid input entered",
+    // },
   }); // setting state for the weather Api
 
   const [valueData, setValueData] = useState();
@@ -69,47 +69,38 @@ function App() {
   }
 
   const weatherValueObject = {
-    temp: `${weatherData.current.temp_c}`,
-    conditionText: `${weatherData.current.condition.text}`,
-    localtime: `${weatherData.location.localtime}`,
-    location: `${weatherData.location.name}`,
-    lat: weatherData.location.lat,
-    lon: weatherData.location.lon,
-    region: weatherData.location.region,
-    id: weatherData.location.tz_id,
-    country: weatherData.location.country,
-    MPH: weatherData.current.wind_kph,
-    wind_dir: weatherData.current.wind_dir,
-    capital: weatherData.location.name,
-    humidity: weatherData.current.humidity,
-    visibility: weatherData.current.vis_miles,
-    pressure: weatherData.current.pressure_mb,
+    temp: `${weatherData?.current?.temp_c}`,
+    conditionText: `${weatherData?.current?.condition.text}`,
+    localtime: `${weatherData?.location?.localtime}`,
+    location: `${weatherData?.location?.name}`,
+    lat: weatherData?.location?.lat,
+    lon: weatherData?.location?.lon,
+    region: weatherData?.location?.region,
+    id: weatherData?.location?.tz_id,
+    country: weatherData?.location?.country,
+    MPH: weatherData?.current?.wind_kph,
+    wind_dir: weatherData?.current?.wind_dir,
+    capital: weatherData?.location?.name,
+    humidity: weatherData?.current?.humidity,
+    visibility: weatherData?.current?.vis_miles,
+    pressure: weatherData?.current?.pressure_mb,
+    temp_f: weatherData?.current?.temp_f,
   };
 
-  const {
-    onInputChange,
-    image,
-    onSearch,
-    temp,
-    conditionText,
-    localtime,
-    location,
-    lat,
-    lon,
-    region,
-    id,
-  } = weatherData.current;
+  console.log(weatherData?.error?.message);
 
   return (
     <div className="container">
       <Main
         onInputChange={handleInputChange}
-        image={weatherData.current.condition.icon}
+        image={weatherData?.current?.condition?.icon}
         onSearch={fetchWeatherData}
         temp={weatherValueObject.temp}
         conditionText={weatherValueObject.conditionText}
         localtime={weatherValueObject.localtime}
         location={weatherValueObject.location}
+        temp_f={weatherValueObject.temp_f}
+        error={weatherData?.error?.message}
       />
       <div className="forms">
         <Form
@@ -118,7 +109,7 @@ function App() {
           region={weatherValueObject.region}
           id={weatherValueObject.id}
           country={weatherValueObject.country}
-          image={weatherData.current.condition.icon}
+          image={weatherData?.current?.condition?.icon}
           MPH={weatherValueObject.MPH}
           windDir={weatherValueObject.wind_dir}
           capital={weatherValueObject.capital}
@@ -126,6 +117,7 @@ function App() {
           visibility={weatherValueObject.visibility}
           pressure={weatherValueObject.pressure}
           temp={weatherValueObject.temp}
+          temp_f={weatherValueObject.temp_f}
         />
       </div>
     </div>

@@ -13,7 +13,7 @@
   justify-content: end;
   margin-right: f.rem(20);
   gap: f.rem(3);
-  @media screen and (max-width: f.rem(375)) {
+  @media screen and (max-width: f.rem(700)) {
     display: none;
   }
 }
@@ -27,7 +27,7 @@
   gap: f.rem(30);
   margin-top: f.rem(320);
   transform: translateX(f.rem(80));
-  @media screen and (max-width: f.rem(375)) {
+  @media screen and (max-width: f.rem(700)) {
     display: flex;
     margin-top: f.rem(20);
     flex-wrap: wrap;
@@ -35,9 +35,11 @@
   }
 }
 .flexItem {
+  padding: f.rem(15);
   width: 120px;
   height: 177px;
   background: #1e213a;
+  border-radius: 4px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @media screen and (max-width: f.rem(375)) {
     display: grid;
@@ -48,7 +50,7 @@
 }
 .flexItem > h1 {
   font-size: 18px;
-  max-width: f.rem(100);
+  max-width: f.rem(180);
   padding-left: 12px;
 }
 .flexDetails {
@@ -86,6 +88,11 @@
   @media screen and (max-width: f.rem(375)) {
     margin-left: f.rem(20);
   }
+  @media screen and (max-width: f.rem(700)) {
+    margin-top: f.rem(40);
+    font-size: 28px;
+    margin-left: f.rem(90);
+  }
 }
 .flexItem > h1,
 h3,
@@ -98,6 +105,7 @@ h6 {
 .gridItem > h3,
 h5,
 h6 {
+  padding: 10px;
   font-size: 13px;
   line-height: 10px;
   color: #e7e7eb;
@@ -117,10 +125,13 @@ h6 {
   border-radius: 20px;
   position: relative;
   margin: 15px 0;
-  height: 30px;
+  height: 15px;
   width: 250px;
   transform: translateX(f.rem(50));
   margin-bottom: f.rem(5);
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(15));
+  }
 }
 
 .progress-done {
@@ -135,4 +146,35 @@ h6 {
   width: 0;
   opacity: 0;
   transition: 1s ease 0.3s;
+}
+.gridItem > h5 {
+  padding-top: f.rem(8);
+}
+.flexDetails {
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(35));
+  }
+}
+.flexBox {
+  @media screen and (max-width: f.rem(375)) {
+    transform: translateX(f.rem(35));
+  }
+}
+.flexContainer > button:first-child {
+  background: #e7e7eb;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+}
+.flexContainer > button:last-child {
+  background: #585676;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  color: #e7e7eb;
 }
