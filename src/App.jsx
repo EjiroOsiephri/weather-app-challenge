@@ -87,7 +87,7 @@ function App() {
     temp_f: weatherData?.current?.temp_f,
   };
 
-  console.log(weatherData?.error?.message);
+  // console.log(weatherData?.error?.message);
 
   return (
     <div className="container">

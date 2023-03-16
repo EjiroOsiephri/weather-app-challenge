@@ -32,7 +32,7 @@ function Main(props) {
   const minute = dateTime.getMinutes();
 
   {
-    props.error && alert("ejiro");
+    props.error && alert(props.error);
   }
   return (
     <div className="allDivs">
