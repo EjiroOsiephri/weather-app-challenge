@@ -30,10 +30,13 @@ function Main(props) {
   const day = dateTime.getDate();
   const hour = dateTime.getHours();
   const minute = dateTime.getMinutes();
-
-  {
-    props.error && alert(props.error);
+  if (props.error) {
+    alert(props.error);
+    location.reload();
+  } else {
+    console.log(null);
   }
+
   return (
     <div className="allDivs">
       <div className="sideDiv">
@@ -41,11 +44,7 @@ function Main(props) {
           Search for places
         </button>
         <div className="image">
-          {show ? (
-            <img src={props.image} style={{ display: "none" }} /> // Set display to none if show is true
-          ) : (
-            <img src={props.image} style={{ display: "block" }} /> // Set display to block if show is false
-          )}
+          <img src={props.image} />
         </div>
 
         <div className="form">
@@ -60,20 +59,14 @@ function Main(props) {
           {show && <button onClick={props.onSearch}>Search</button>}
           {show && <FaTimes className="times" onClick={changeIcon} />}
         </div>
-        <div style={{ display: show ? "none" : "block" }}>
-          {show ? (
-            <h1 className="tempText">{props.temp}</h1>
-          ) : (
-            <h2 className="tempDegree">
-              {props.temp}
-              <span>°C</span>
-            </h2>
-          )}
-          {show ? (
-            <h1>{props.conditionText}</h1>
-          ) : (
-            <h2 className="conditionText">{props.conditionText}</h2>
-          )}
+        <div>
+          <h2 className="tempDegree">
+            {props.temp}
+            <span>°C</span>
+          </h2>
+
+          <h2 className="conditionText">{props.conditionText}</h2>
+
           <div className="finalLocation">
             <h2>
               Today . {day}, {month}

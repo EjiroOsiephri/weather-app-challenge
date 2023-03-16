@@ -7,7 +7,7 @@
 }
 body {
   background-color: rgba(16, 14, 29, 1);
-  overflow: hidden;
+  // overflow: hidden;npm
   font-family: "Raleway";
   @include u.breakpoints(medium) {
     overflow-y: scroll;
@@ -28,7 +28,7 @@ body {
   background-color: #1e213a;
   background-repeat: no-repeat;
   width: f.rem(459);
-  height: f.rem(1023);
+  height: f.rem(650);
   @media screen and (max-width: f.rem(375)) {
     width: 350px;
   }
@@ -37,9 +37,9 @@ body {
   width: f.rem(150);
   height: f.rem(150);
   transform: translate(f.rem(130), f.rem(40));
-  margin-bottom: 30px;
+  margin-bottom: -30px;
 
-  @include u.breakpoints(medium) {
+  @media screen and (min-width: f.rem(375)) {
     transform: translate(f.rem(60), f.rem(40));
     width: f.rem(160);
   }
@@ -47,6 +47,7 @@ body {
 .searchBtn {
   margin-top: f.rem(70);
   width: f.rem(161);
+
   height: f.rem(40);
   transform: translate(f.rem(12), f.rem(-20));
   background: #6e707a;
@@ -61,7 +62,7 @@ body {
 }
 .form > input {
   box-sizing: border-box;
-  transform: translate(f.rem(10), f.rem(-60));
+  transform: translate(f.rem(10), f.rem(-186));
   width: 268px;
   height: 48px;
   border: 1px solid #e7e7eb;
@@ -70,6 +71,7 @@ body {
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  margin-bottom: 0;
   line-height: 19px;
   color: #616475;
   padding-left: f.rem(20);
@@ -80,11 +82,12 @@ body {
 .form > button {
   width: 86px;
   height: 48px;
-  transform: translate(f.rem(15), f.rem(-60));
+  transform: translate(f.rem(15), f.rem(-186));
   background: #3c47e9;
   font-family: "Raleway";
   font-style: normal;
   font-weight: 600;
+  margin-bottom: 0;
   font-size: 16px;
   line-height: 19px;
   color: #e7e7eb;
@@ -96,17 +99,16 @@ body {
   position: absolute;
   margin-top: 5px;
   left: f.rem(420);
-  transform: translateY(f.rem(-100));
+  transform: translateY(f.rem(-230));
   color: #e7e7eb;
   @media screen and (max-width: f.rem(375)) {
-    margin-top: f.rem(-95);
+    margin-top: f.rem(-235);
     transform: translateX(f.rem(-150));
   }
 }
 .tempDegree {
   font-family: "Raleway";
   font-style: normal;
-  // transform: translate(f.rem(100), f.rem(80));
   margin-top: 50px;
   text-align: center;
   font-weight: 500;
@@ -134,6 +136,7 @@ h2 {
   margin-top: -30px;
   @media screen and (max-width: f.rem(375)) {
     transform: translateX(f.rem(-26));
+    margin-left: 12px;
   }
   @include u.breakpoints(medium) {
     transform: translateX(f.rem(-56));

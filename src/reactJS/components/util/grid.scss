@@ -7,6 +7,9 @@
     display: grid;
   }
 }
+button {
+  border: none;
+}
 .flexContainer {
   transform: translateY(f.rem(300));
   display: flex;
@@ -27,11 +30,16 @@
   gap: f.rem(30);
   margin-top: f.rem(320);
   transform: translateX(f.rem(80));
-  @media screen and (max-width: f.rem(700)) {
+  @media screen and (max-width: f.rem(300)) {
     display: flex;
-    margin-top: f.rem(20);
+    margin-top: f.rem(520);
     flex-wrap: wrap;
-    transform: translateX(f.rem(20));
+  }
+  @media screen and (min-width: f.rem(301)) {
+    display: flex;
+    margin-top: f.rem(370);
+    flex-wrap: wrap;
+    transform: translateX(f.rem(30));
   }
 }
 .flexItem {
@@ -86,12 +94,12 @@
   margin-top: f.rem(15);
   margin-left: f.rem(80);
   @media screen and (max-width: f.rem(375)) {
-    margin-left: f.rem(20);
+    margin-left: 10%;
   }
-  @media screen and (max-width: f.rem(700)) {
+  @media screen and (min-width: f.rem(400)) {
     margin-top: f.rem(40);
     font-size: 28px;
-    margin-left: f.rem(90);
+    margin-left: 20%;
   }
 }
 .flexItem > h1,
@@ -128,7 +136,7 @@ h6 {
   height: 15px;
   width: 250px;
   transform: translateX(f.rem(50));
-  margin-bottom: f.rem(5);
+  margin-bottom: f.rem(15);
   @media screen and (max-width: f.rem(375)) {
     transform: translateX(f.rem(15));
   }
@@ -136,7 +144,7 @@ h6 {
 
 .progress-done {
   background: linear-gradient(to left, #f2709c, #ff9472);
-  box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
+  // box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
   border-radius: 20px;
   color: #fff;
   display: flex;
@@ -152,12 +160,11 @@ h6 {
 }
 .flexDetails {
   @media screen and (max-width: f.rem(375)) {
-    transform: translateX(f.rem(35));
   }
 }
 .flexBox {
   @media screen and (max-width: f.rem(375)) {
-    transform: translateX(f.rem(35));
+    transform: translateX(f.rem(15));
   }
 }
 .flexContainer > button:first-child {
